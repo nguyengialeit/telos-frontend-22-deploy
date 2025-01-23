@@ -4,73 +4,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="output.css" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <script>
+      function toggleMenu() {
+        document.getElementById("mobileMenu").classList.toggle("flex");
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+      }
+    </script>
   </head>
   <body>
-    <!-- <div class="text-red-300 text-7xl">Test</div> -->
     <div class="flex flex-col items-center">
       <div class="nav container h-18 flex items-center justify-between">
-        <img src="img/logo.png" alt="" />
-        <div class="gap-8 hidden md:flex">
+        <img src="images/logo.png" alt="" />
+        <div class="gap-8 hidden sm:flex">
           <div>About</div>
           <div>Services</div>
           <div>Blog</div>
           <div>Jobs</div>
-          <div>Contacts</div>
+          <div>Contact</div>
         </div>
-
-        <img src="img/ico_hamburger.webp" alt="" class="size-6 md:hidden" />
-
+        <img
+          src="images/ico_hamburger.webp"
+          alt=""
+          class="size-6 sm:hidden"
+          onclick="toggleMenu()"
+        />
         <div
-          class="mobileMenu flex flex-col items-end gap-3 fixed top-0 right-0 h-screen bg-primary text-white p-5 w-[300px]"
+          id="mobileMenu"
+          class="hidden flex-col items-end gap-3 fixed top-0 right-0 h-screen w-[300px] bg-primary text-white p-5"
         >
           <img
-            src="img/ico_hamburger.webp"
+            src="images/ico_hamburger.webp"
             alt=""
-            class="size-6 md:hidden invert mb-4"
+            class="size-6 sm:hidden invert mb-4"
+            onclick="toggleMenu()"
           />
-
           <div>About</div>
           <div>Services</div>
           <div>Blog</div>
           <div>Jobs</div>
-          <div>Contacts</div>
+          <div>Contact</div>
         </div>
       </div>
-
-      <div class="hero container py-16 flex gap-8 items-center">
+      <div
+        class="hero container py-16 flex flex-col sm:flex-row gap-8 items-center"
+      >
         <div class="left grid sm:grid-cols-6 gap-5 w-1/2">
+          <img src="images/cover_1.png" alt="" class="sm:col-span-3 w-full" />
           <img
-            src="img/cover_1.png"
-            alt=""
-            class="sm:col-span-3 w-full animate__animated animate__backInLeft"
-          />
-          <img
-            src="img/cover_2.png"
+            src="images/cover_2.png"
             alt=""
             class="sm:col-span-3 w-full self-end"
           />
-          <img src="img/cover_3.png" alt="" class="sm:col-span-2 w-full" />
-          <img src="img/cover_4.png" alt="" class="sm:col-span-4 w-full" />
+          <img src="images/cover_3.png" alt="" class="sm:col-span-2 w-full" />
+          <img src="images/cover_4.png" alt="" class="sm:col-span-4 w-full" />
         </div>
-
         <div class="right w-1/2 flex flex-col px-12">
-          <div class="text-h3 font-extrabold">Headline</div>
+          <div class="text-h3 font-extrablol">Headline</div>
           <div class="text-lead1 mt-4 mb-10">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-            reprehenderit quae repudiandae, eaque numquam laudantium?
+            Specially developed to help restore a more youthful appearance with
+            improved radiance and bounce
           </div>
-        </div>
-        <div class="flex gap-x-4 items-center"></div>
-        <div class="flex gap-x-4 items-center mt-6 mb-10"></div>
-        <div
-          class="rounded-lg flex justify-center items-center bg-primary w-25 h-10 text-white"
-        >
-          Buy now
+          <div class="flex gap-x-4 items-center">
+            <img src="images/ico_1.png" alt="" />
+            <div class="flex flex-col gap-y-1">
+              <div class="text-h6 font-bold">Headline</div>
+              <div class="body1">One line description</div>
+            </div>
+          </div>
+          <div class="flex gap-x-4 items-center mt-6 mb-10">
+            <img src="images/ico_1.png" alt="" />
+            <div class="flex flex-col gap-y-1">
+              <div class="text-h6 font-bold">Headline</div>
+              <div class="body1">One line description</div>
+            </div>
+          </div>
+          <div
+            class="rounded-lg flex justify-center items-center bg-primary w-25 h-10 text-white"
+          >
+            Buy now
+          </div>
         </div>
       </div>
       <div class="footer w-full bg-black py-16 text-white">
@@ -109,15 +125,24 @@
             <div>Pricing</div>
             <div>Releases</div>
           </div>
-          <div
+          <!-- <div
             class="sm:col-span-2 md:col-span-4 mt-14 mb-8 flex justify-center relative"
           >
             <div class="px-14 bg-black z-10">
-              <img src="img/ico.png" alt="" />
+              <img src="images/ico.png" alt="" />
             </div>
             <div
               class="h-0.5 w-full bg-white absolute top-1/2 -translate-y-1/2"
             ></div>
+          </div> -->
+          <div
+            class="sm:col-span-2 md:col-span-4 mt-14 mb-8 flex justify-center items-center relative"
+          >
+            <div class="bg-white h-4 flex-1 rounded-full"></div>
+            <div class="px-14 bg-black z-10 w-[160px] h-12">
+              <img src="images/ico.png" alt="" height="48px" width="48px" />
+            </div>
+            <div class="bg-white h-4 flex-1 rounded-full"></div>
           </div>
           <div class="sm:col-span-2 md:col-span-4 text-center">
             © 2020 Landify UI Kit. All rights reserved.
